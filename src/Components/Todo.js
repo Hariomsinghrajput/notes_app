@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 
- export const Todo = ({task}) => {
+export const Todo = ({ Task, deleteTodo }) => {
   return (
-    <div>
-      <p>{task.Task}</p>
+    <div style={{ display: "flex", gap: "20px" }}>
+      <p>{Task.Task}</p>
+      <button onClick={() => deleteTodo()}>X</button>
     </div>
-  )
-}
+  );
+};
 
-export default Todo
+export default Todo;
