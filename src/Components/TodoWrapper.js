@@ -12,9 +12,8 @@ export const TodoWrapper = () => {
       { id: uuidv4(), Task: todo, completed: false, isEditing: false },
     ]);
   }
-  const deleteTodo = () => {
+  const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
-    console.log("DELETED....");
   };
   return (
     <div>

@@ -5,7 +5,6 @@ export const TodoForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.children["todo-text"].value);
     addTodo(value);
     setvalue("");
   };
