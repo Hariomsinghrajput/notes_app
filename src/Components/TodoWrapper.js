@@ -13,41 +13,40 @@ export const TodoWrapper = () => {
       { id: uuidv4(), Task: todo, completed: false, isEditing: false },
     ]);
   }
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
   function EditTodo(id) {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
-      )
+    let finded = todos.map((todo, ind) =>
+      todo.id === id ? todos[ind].Task : todo
     );
-    console.log("clicked");
+    console.log(finded);
+    setTodos(finded);
   }
-  const Edittask = (Task, id) => {
+  function Edittask(Task, id) {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, Task, isEditing: !todo.isEditing } : todo
       )
     );
-  };
+  }
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+  function EditTodo() {}
   return (
-    <div>
+    <>
       <TodoForm addTodo={addTodo} />
-      {todos.map((todo, index) =>
-        todo.isEditing ? (
-          <EdittodoForm Edittodo={Edittask} Task={todo} />
-        ) : (
-          <Todo
-            Task={todo}
-            key={index}
-            deleteTodo={deleteTodo}
-            EditTodo={EditTodo}
-          />
-        )
-      )}
-    </div>
+      {todos.map((todo, index) => (
+        // todo.isEditing ? (
+        //   <EdittodoForm Edittodo={updatetask} Task={todo} />
+        // ) : (
+        <Todo
+          Task={todo}
+          key={index}
+          deleteTodo={deleteTodo}
+          EditTodo={EditTodo}
+        />
+      ))}
+    </>
   );
 };
 

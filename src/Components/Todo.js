@@ -2,9 +2,11 @@ import React from "react";
 
 export const Todo = ({ Task, deleteTodo, EditTodo }) => {
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
+    <div>
       <p>{Task.Task}</p>
-      <button onClick={() => deleteTodo(Task.id)}>X</button>
+      <button className="" onClick={() => deleteTodo(Task.id)}>
+        X
+      </button>
       <button onClick={() => EditTodo(Task.id)}>E</button>
     </div>
   );
