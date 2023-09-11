@@ -1,10 +1,10 @@
 import "./App.css";
-import TodoWrapper from "./Components/TodoWrapper";
+import TodoBody from "./Components/TodoBody";
 
 function App() {
   return (
     <>
-      <TodoWrapper />
+      <TodoBody />
     </>
   );
 }
